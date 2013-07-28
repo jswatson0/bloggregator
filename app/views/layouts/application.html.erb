@@ -7,6 +7,18 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+	<ul class="nav pull-right">
+					<li> <%= link_to 'Home', posts_path %></li>
+	        <% if current_user.present? %>
+	        <%# user is logged in, show log out link, user tasks, create new task %>
+	          <li><%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %></li>
+	         
+	        <%# user is not logged in, show signup and login links %>
+	        <% else %>
+	          <li><%= link_to 'Sign In', new_user_session_path %></li> 
+	          <li><%= link_to 'Register Now!', new_user_registration_path %></li>
+	        <% end %>
+	      </ul>
 
 <%= yield %>
 
