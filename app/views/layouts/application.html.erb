@@ -6,6 +6,9 @@
   <%= csrf_meta_tags %>
   <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
   <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+  <link href='http://fonts.googleapis.com/css?family=Libre+Baskerville|Open+Sans+Condensed:300,300italic,700' rel='stylesheet' type='text/css'>
+
+
   <%= stylesheet_link_tag    "application", :media => "all" %>
   
 </head>
@@ -13,8 +16,10 @@
 	<div id="container">
 		<nav class="navbar">
 	    <div class="navbar-inner">
-	      <a class="brand" href="/">Bloggregator</a>
-	      <ul class="nav pull-right">					
+		    <div class="nav left">
+		      <a class="brand" href="/"><h4>Bloggregator</h4></a>
+		    </div>
+	      <ul class="nav right">					
 	      	<li> <%= link_to 'Home', posts_path %></li>
 	        <% if current_user.present? %>
 	        <%# user is logged in, show log out link, user tasks, create new task %>

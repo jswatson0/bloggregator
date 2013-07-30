@@ -5,7 +5,7 @@
   <% @posts.each do |post| %>
     <div class="post">
     
-      <h1>  
+      <h1 class="title">  
         <%= post.title %>
       </h1>
 
@@ -15,8 +15,9 @@
       </p>
 
       <p>
-        <b>See the full aritcle @ </b>
+        <b>See the full aritcle @ 
         <%= link_to post.url, post.url, :target => "_blank" %>
+        </b>
       </p>
 
       <p class="preview"> 
@@ -28,6 +29,7 @@
         <%= post.date_posted %>
 
         <% if current_user.try(:admin?) %>
+          
           <%= link_to 'Edit', edit_post_path(post) %> 
         <% end %>
         

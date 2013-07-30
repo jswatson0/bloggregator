@@ -5,19 +5,37 @@ body {
   font-size: 13px;
   line-height: 18px;
 }
+.nav.right{
+  margin-top: 10px;
+  margin-right: 100px;
+  float: right;
+
+}
 .post {
   width: 40%;
   margin: 0px auto;
 }
-p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 15
+a, p, ol, ul, td {
+  font-family: 'Open Sans Condensed', sans-serif;
  
 }
+.nav.left {
+  margin-left: 100px;
+}
+.brand {
+  font-weight: bold;
+  margin-left: 100px;
+}
+
+
+  .title {
+    font-family: 'Libre Baskerville', serif;
+  }
 
 .preview {
   font-size: 25px;
   line-height: 27px;
+
   
 }
 
