@@ -2,13 +2,20 @@
 <html>
 <head>
   <title>Bloggregator</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  
 </head>
 <body>
-	<ul class="nav pull-right">
-					<li> <%= link_to 'Home', posts_path %></li>
+	<div id="container">
+		<nav class="navbar">
+	    <div class="navbar-inner">
+	      <a class="brand" href="/">Bloggregator</a>
+	      <ul class="nav pull-right">					
+	      	<li> <%= link_to 'Home', posts_path %></li>
 	        <% if current_user.present? %>
 	        <%# user is logged in, show log out link, user tasks, create new task %>
 	          <li><%= link_to 'Sign Out', destroy_user_session_path, :method => :delete %></li>
@@ -18,9 +25,22 @@
 	          <li><%= link_to 'Sign In', new_user_session_path %></li> 
 	          <li><%= link_to 'Register Now!', new_user_registration_path %></li>
 	        <% end %>
+	        <!-- Allow only admin to create new post -->
+		      <% if current_user.try(:admin?) %>
+		        <li><%= link_to 'New Post', new_post_path %></li>
+		     <% end %>
 	      </ul>
-
-<%= yield %>
-
+	    </div>
+	  </nav>
+  </div>
+	<div class="container">
+		<% if flash[:notice] %>
+			<div class="alert"><%= notice %></div>
+		<% end%>
+		<% if flash[:alert] %>
+			<div class="alert alert-error"><%= alert %></div>
+		<%end%>
+	  <%= yield %>
+	</div>
 </body>
 </html>

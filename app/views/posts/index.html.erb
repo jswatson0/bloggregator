@@ -1,33 +1,39 @@
-<h1>Listing posts</h1>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Author</th>
-    <th>URL</th>
-    <th>Preview</th>
-    <th>Date posted</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div id="container">
+  <table class="table table-striped">
 
-<% @posts.each do |post| %>
-  <tr>
-    <td><%= post.title %></td>
-    <td><%= post.author %></td>
-    <td><%= post.url %></td>
-    <td><%= post.preview %></td>
-    <td><%= post.date_posted %></td>
-    <td><%= link_to 'Show', post %></td>
-    <td><%= link_to 'Edit', edit_post_path(post) %></td>
-    <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
+  <% @posts.each do |post| %>
+    <div class="post">
+    
+      <h1>  
+        <%= post.title %>
+      </h1>
 
-<br />
+      <p>
+        <b>by:</b>
+        <%= post.author %>
+      </p>
 
-<% if current_user.try(:admin?) %>
-    <%= link_to 'New Post', new_post_path %>
-<% end %>
+      <p>
+        <b>See the full aritcle @ </b>
+        <%= link_to post.url, post.url, :target => "_blank" %>
+      </p>
+
+      <p class="preview"> 
+        <%= post.preview %>
+      </p>
+
+      <p>
+        <b>Date posted:</b>
+        <%= post.date_posted %>
+
+        <% if current_user.try(:admin?) %>
+          <%= link_to 'Edit', edit_post_path(post) %> 
+        <% end %>
+        
+        <h3> ____________________________ </h3>
+      </p>
+    </div>
+  <% end %>
+  </table>
+</div>
