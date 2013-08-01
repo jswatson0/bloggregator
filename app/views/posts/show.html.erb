@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 <div class="post">
   
-  <h1>  
+  <h1 class="title">
     <%= @post.title %>
   </h1>
 
@@ -11,8 +11,9 @@
   </p>
 
   <p>
-    <b>See the full aritcle @ </b>
-    <%= link_to @post.url, @post.url, :target => "_blank" %>
+    <b>See the full aritcle @ 
+      <%= link_to @post.url, @post.url, :target => "_blank" %>
+    </b>
   </p>
 
   <p class="preview">

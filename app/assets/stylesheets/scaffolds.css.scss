@@ -1,12 +1,16 @@
-h2 {
-  font-family: 'Open Sans Condensed', sans-serif;
-}
+
 body {
   background-color: #fff;
   color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
+  margin-top: 100px;
+  margin-bottom: 50px;
+}
+
+.navbar {
+
 }
 .nav.right{
   margin-top: 10px;
@@ -17,11 +21,21 @@ body {
 .post {
   width: 40%;
   margin: 0px auto;
+}
+
+.top {
   margin-top: 100px;
 }
-a, p, ol, ul, td {
+a, p, ol, ul, td, h2 {
   font-family: 'Open Sans Condensed', sans-serif;
  
+  a{
+    font-size: 20px; 
+  }
+ 
+}
+.field {
+  font-family: 'Open Sans Condensed', sans-serif; 
 }
 .nav.left {
   margin-left: 100px;
@@ -32,9 +46,9 @@ a, p, ol, ul, td {
 }
 
 
-  .title {
-    font-family: 'Libre Baskerville', serif;
-  }
+.title {
+  font-family: 'Libre Baskerville', serif;
+}
 
 .preview {
   font-size: 25px;
