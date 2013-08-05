@@ -1,4 +1,14 @@
 Bloggregator::Application.routes.draw do
+  devise_for :views
+
+  get "favorites", to: "favorites#index"
+
+  get "favorites/new", to: "favorites#new", as: "new_favorites"
+
+  post "favorites", to: "favorites#create", as: "favorites"
+
+  delete "favorites/:id", to: "favorites#destroy", as: "destroy_favorites"
+
   devise_for :admins
 
   root :to => "posts#index"

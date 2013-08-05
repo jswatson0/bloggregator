@@ -1,0 +1,30 @@
+<h1>Favorites#create</h1>
+<p>Find me in app/views/favorites/create.html.erb</p>
+
+<% @favorites.each do |favorite| %>
+    <div class="post">
+    
+      <h1 class="title">  
+        <%= favorite.post.title %>
+      </h1>
+
+      <p>
+        <b>by:</b>
+        <%= favorite.post.author %>
+      </p>
+
+      <p>
+        <b>See the full aritcle @ 
+        <%= link_to favorite.post.url, favorite.post.url, :target => "_blank" %>
+        </b>
+      </p>
+
+      <p class="preview"> 
+        <%= favorite.post.preview %>
+      </p>
+
+      <p>
+        <b>Date posted:</b>
+        <%= favorite.post.date_posted %>
+
+ <% end %>

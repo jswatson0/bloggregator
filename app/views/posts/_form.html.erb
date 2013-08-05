@@ -10,28 +10,31 @@
       </ul>
     </div>
   <% end %>
-
   <div class="field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title %>
+    <div>
+      <%= f.label :title %><br />
+      <%= f.text_field :title %>
+    </div>
+    <div>
+      <%= f.label :author %><br />
+      <%= f.text_field :author %>
+    </div>
+    <div>
+      <%= f.label :url %><br />
+      <%= f.text_field :url %>
+    </div>
+    <div>
+      <%= f.label :preview %><br />
+      <%= f.text_area :preview %>
+    </div>
+    <div>
+      <%= f.label :date_posted %><br />
+      <%= f.date_select :date_posted %>
+    </div>
+    <div>
+    <%= button_tag(type: 'submit', class: "btn") do %>
+       Submit          
+    <% end %>
   </div>
-  <div class="field">
-    <%= f.label :author %><br />
-    <%= f.text_field :author %>
-  </div>
-  <div class="field">
-    <%= f.label :url %><br />
-    <%= f.text_field :url %>
-  </div>
-  <div class="field">
-    <%= f.label :preview %><br />
-    <%= f.text_area :preview %>
-  </div>
-  <div class="field">
-    <%= f.label :date_posted %><br />
-    <%= f.date_select :date_posted %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
   </div>
 <% end %>

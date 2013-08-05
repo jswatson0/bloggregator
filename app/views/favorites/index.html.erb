@@ -1,0 +1,39 @@
+<div class="container">
+	<div class="welcome">
+	  <h3> Read an Article - Get Smarter - Carry on </h3>
+	  <p>____________________________________________________________________________________________________________________________________
+	  </p>
+	</div>
+
+	<% @favorites.each do |favorite| %>
+	  <div class="post">
+
+		  <h1 class="title">  
+		    <%= favorite.post.title %>
+		  </h1>
+
+		  <p>
+		    <b>by:</b>
+		    <%= favorite.post.author %>
+		  </p>
+
+		  <p>
+		    <b>See the full aritcle @ 
+		    <%= link_to favorite.post.url, favorite.post.url, :target => "_blank" %>
+		    </b>
+		  </p>
+
+		  <p class="preview"> 
+		    <%= favorite.post.preview %>
+		  </p>
+
+		  <p>
+		    <b>Date posted:</b>
+		    <%= favorite.post.date_posted %>
+		  </p>
+		  <%= link_to 'Remove From My Reads', destroy_favorites_path(favorite), method: :delete, data: { confirm: 'Are you sure?' } %> 
+		  ____________________________________________________________	
+	  </div>
+  <% end %>
+</div>
+
