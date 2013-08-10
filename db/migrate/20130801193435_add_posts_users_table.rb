@@ -2,7 +2,6 @@ class AddPostsUsersTable < ActiveRecord::Migration
   
 
   def self.up
-  	drop_table :posts_users
   	create_table :posts_users, :id => false do |t|
   		t.references :posts 
   		t.references :users 
