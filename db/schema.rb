@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130809154652) do
+ActiveRecord::Schema.define(:version => 20130809173959) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -39,6 +39,17 @@ ActiveRecord::Schema.define(:version => 20130809154652) do
   end
 
   add_index "favorites", ["user_id"], :name => "index_favorites_on_user_id"
+
+  create_table "feed_entries", :force => true do |t|
+    t.string   "title"
+    t.string   "string"
+    t.text     "summary"
+    t.string   "url"
+    t.datetime "published_at"
+    t.string   "guid"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
 
   create_table "posts", :force => true do |t|
     t.string   "title"
