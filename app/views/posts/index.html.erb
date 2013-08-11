@@ -1,6 +1,5 @@
 
 <div id="container">
-
   <div class="welcome">
     <h3> Read an Article - Get Smarter - Carry on </h3>
     <p>____________________________________________________________________________________________________________________________________
@@ -33,38 +32,36 @@
       <p>
         <b>Date posted:</b>
         <%= post.date_posted %>
+      </p>
 
-        <!-- if user signed in Add post to favorite reads -->
-        <% if current_user %>
-          <% if current_user.favorites.collect(&:post_id).include? post.id %>
-            <div class="inreads">
-              <p><b>In My Reads</b></p>
-            </div>
-          <% elsif %>
-            <%= form_for :favorites, :url => favorites_path do |f| %>
-              <%= f.hidden_field :post_id, :value => post.id %>
-              <%= button_tag(type: 'submit', class: "btn btn-link") do %>
-                <i class="icon-plus-sign icon-white icon-2x"></i>
-              <% end %>
+      <!-- if user signed in Add post to favorite reads -->
+      <% if current_user %>
+        <% if current_user.favorites.collect(&:post_id).include? post.id %>
+          <div class="inreads">
+            <p><b>In My Reads</b></p>
+          </div>
+        <% elsif %>
+          <%= form_for :favorites, :url => favorites_path do |f| %>
+            <%= f.hidden_field :post_id, :value => post.id %>
+            <%= button_tag(type: 'submit', class: "btn btn-link") do %>
+              <i class="icon-plus-sign icon-white icon-2x"></i>
             <% end %>
           <% end %>
-        <% else %>
-          <div class="registernow">
-            <b><%= link_to 'Register now to add this post to your reading list', new_user_registration_path %></b>
-          </div>
-        <% end %> 
-    
-        <!-- if current user admin alow to edit -->
-        <% if current_user.try(:admin?) %>
-          <%= link_to 'Edit', edit_post_path(post) %>           
         <% end %>
-       <div class="divimg"> 
+      <% else %>
+        <div class="registernow">
+          <b><%= link_to 'Register now to add this post to your reading list', new_user_registration_path %></b>
+        </div>
+      <% end %> 
+  
+      <!-- if current user admin alow to edit -->
+      <% if current_user.try(:admin?) %>
+        <%= link_to 'Edit', edit_post_path(post) %>           
+      <% end %>
+      <div class="divimg"> 
         ___________________________________________________________ 
-      </div>
-      </p>
-      
-    </div>
-    
+      </div> 
+    </div>   
   <% end %>
   <div class="paginate">
     <%= will_paginate @posts %>
