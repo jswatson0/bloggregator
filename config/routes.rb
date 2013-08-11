@@ -15,6 +15,7 @@ Bloggregator::Application.routes.draw do
 
   resources :posts
 
+  get 'feeds', to: 'feed#index'
 
   devise_for :users
 
