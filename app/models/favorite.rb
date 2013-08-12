@@ -10,7 +10,7 @@ class Favorite < ActiveRecord::Base
   def associate_user
   	unless self.user_id
   		return self.user_id = session[:user_id] if session[:user_id]
-  		return fase
+  		return false
   	end
   end
 end
