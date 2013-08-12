@@ -9,16 +9,16 @@
 
 	<% @entry.each do |entry| %>
 		<div class="post">
-			  <h1>Feeds</h1>
+		  
+		  <h1>Feeds</h1>
+		  
 		  <h1 class="title">  
 		    <%= entry.title %>
 		  </h1>
-
 		  
-
 		  <p>
 		    <b>See the full aritcle @ 
-		    <%= link_to entry.url, entry.url, :target => "_blank" %>
+		    	<%= link_to entry.url, entry.url, :target => "_blank" %>
 		    </b>
 		  </p>
 
