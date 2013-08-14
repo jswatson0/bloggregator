@@ -6,7 +6,7 @@
 	</div>
 
 	<% @favorites.each do |favorite| %>
-	  <div class="post">
+	  <div class="post" id="show_favorite_<%=favorite.id %>">
 
 		  <h1 class="title">  
 		    <%= favorite.post.title %>
@@ -31,7 +31,7 @@
 		    <b>Date posted:</b>
 		    <%= favorite.post.date_posted %>
 		  </p>
-		  <%= link_to 'Remove From My Reads', destroy_favorites_path(favorite), method: :delete, data: { confirm: 'Are you sure?' } %> 
+		  <%= link_to 'Remove From My Reads', destroy_favorites_path(favorite), method: :delete, remote: true, format: :js, data: { confirm: 'Are you sure?' } %> 
 		  ____________________________________________________________	
 	  </div>
   <% end %>

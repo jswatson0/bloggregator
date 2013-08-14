@@ -83,4 +83,16 @@ class PostsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  # POST /posts/1/favorite
+  def favorite
+    @post = Post.find(params[:id])
+    @favorite = current_user.favorites.create(post_id: @post.id)
+    @favorite.save
+
+    respond_to do |format|
+      format.html { redirect_to root_url, flash: {success: 'Comment successfully created.'} }
+      format.js { render :json => true }
+    end
+  end
 end
