@@ -13,8 +13,17 @@ Bloggregator::Application.routes.draw do
 
   root :to => "posts#index"
 
-  resources :posts
-
+  resources :posts do
+    member do
+      post 'favorite'
+    end
+  end
+     
+  resources :feeds do 
+    member do
+      post 'publish'      
+    end
+  end
 
   devise_for :users
 
