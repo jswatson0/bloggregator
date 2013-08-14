@@ -9,7 +9,10 @@
  * compiled file, but it's generally better to create a new file per style scope.
  *
  *= require_self
- *= require_tree .
+ *= require favorites
+ *= require feeds
+ *= require posts
+ *= require scaffolds
  */
 
  h1 {font-family: 'Libre Baskerville', serif;}
