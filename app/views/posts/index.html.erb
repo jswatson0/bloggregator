@@ -8,9 +8,9 @@
 
   <!-- Listing the posts -->
   <% @posts.each do |post| %>
-    <div class="post">
+    <div class="post" data-id="<%=post.id%>" >
    
-      <h1 class="title">  
+      <h1 class="title" >  
         <%= post.title %>
       </h1>
 
@@ -26,7 +26,7 @@
       </p>
 
       <p class="preview"> 
-        <%= post.preview %>
+        <%= raw post.preview %>
       </p>
 
       <p>
@@ -41,12 +41,13 @@
             <p><b>In My Reads</b></p>
           </div>
         <% elsif %>
-          <%= form_for :favorites, :url => favorites_path do |f| %>
-            <%= f.hidden_field :post_id, :value => post.id %>
-            <%= button_tag(type: 'submit', class: "btn btn-link") do %>
-              <i class="icon-plus-sign icon-white icon-2x"></i>
-            <% end %>
+          <%= link_to favorite_post_path(post), :method => :post, :remote => true, class: "btn btn-link", "data-post-id" => post.id, format: :js do %>
+            <i class="icon-plus-sign icon-white icon-2x"></i>
           <% end %>
+          
+          <div class="inreads" style="display:none">
+            <p><b>In My Reads</b></p>
+          </div>
         <% end %>
       <!-- If not signed in, ask to register -->
       <% else %>

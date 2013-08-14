@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130809173959) do
+ActiveRecord::Schema.define(:version => 20130814030417) do
 
   create_table "admins", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -49,6 +49,8 @@ ActiveRecord::Schema.define(:version => 20130809173959) do
     t.string   "guid"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
+    t.string   "author"
+    t.integer  "post_id"
   end
 
   create_table "posts", :force => true do |t|
@@ -57,8 +59,9 @@ ActiveRecord::Schema.define(:version => 20130809173959) do
     t.string   "url"
     t.text     "preview"
     t.date     "date_posted"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.datetime "published_at"
   end
 
   create_table "posts_users", :id => false, :force => true do |t|

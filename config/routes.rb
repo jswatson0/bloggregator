@@ -13,9 +13,17 @@ Bloggregator::Application.routes.draw do
 
   root :to => "posts#index"
 
-  resources :posts
-
-  get 'feeds', to: 'feed#index'
+  resources :posts do
+    member do
+      post 'favorite'
+    end
+  end
+     
+  resources :feeds do 
+    member do
+      post 'publish'      
+    end
+  end
 
   devise_for :users
 
