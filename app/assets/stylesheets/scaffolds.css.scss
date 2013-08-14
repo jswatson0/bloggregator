@@ -28,6 +28,7 @@ body {
 }
 a, p, ol, ul, td, h2 {
   font-family: 'Open Sans Condensed', sans-serif;
+  font-weight: 300;
  
   a{
     font-size: 20px; 
@@ -35,7 +36,8 @@ a, p, ol, ul, td, h2 {
  
 }
 .field {
-  font-family: 'Open Sans Condensed', sans-serif; 
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-weight: 300; 
 }
 .nav.left {
   margin-left: 100px;
@@ -48,6 +50,7 @@ a, p, ol, ul, td, h2 {
 
 .title {
   font-family: 'Libre Baskerville', serif;
+  font-weight: 400;
 }
 
 .preview {
@@ -129,6 +132,7 @@ div {
   margin-bottom: 50px;
   // margin-top: -50px;
   font-family: 'Libre Baskerville', serif;
+  font-weight: 400;
 }
 .divimg {
   margin: 0 auto;
