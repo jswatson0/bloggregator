@@ -26,7 +26,7 @@
 		  
 		  <p>
 		    <b>See the full aritcle @ 
-		    	<%= link_to entry.url, entry.url, :target => "_blank" %>
+		    	<%= link_to entry.url.sanitize!, entry.url, :target => "_blank" %>
 		    </b>
 		  </p>
 
