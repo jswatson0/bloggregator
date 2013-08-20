@@ -1,8 +1,14 @@
 class FavoritesController < ApplicationController
   def index
-  	@favorites = current_user.favorites.all
+    params[:per_page] ||= 5
+    params[:page]     ||= 1
 
-    @favorite = Favorite.new
+    @favorites = Favorite.order("created_at DESC").page(params[:page].to_i).per_page(params[:per_page].to_i)
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @posts }
+    end
   end
 
   def create
