@@ -21,7 +21,7 @@
 
       <p>
         <b>See the full aritcle @ 
-        <%= link_to post.url, post.url.sanitize!, :target => "_blank" %>
+        <%= link_to truncate("#{post.url}", :length => 40), post.url, :target => "_blank" %>
         </b>
       </p>
 
