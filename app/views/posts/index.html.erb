@@ -11,13 +11,13 @@
     <div class="post" data-id="<%=post.id%>" >
    
       <h1 class="title" >  
-        <%= post.title %>
+        <%= raw post.title %>
       </h1>
       
       <% if post.author.present? %>
         <p class="author">
           <b>by:</b>
-          <%= post.author %>
+          <%= raw post.author %>
         </p>
       <% end %>
 

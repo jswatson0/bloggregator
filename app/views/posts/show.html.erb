@@ -2,22 +2,23 @@
 <div class="post">
   
   <h1 class="title">
-    <%= @post.title %>
+    <%= raw @post.title %>
   </h1>
 
   <p>
     <b>by:</b>
-    <%= @post.author %>
+    <%= raw @post.author %>
   </p>
 
-  <p>
-    <b>See the full aritcle @ 
-      <%= link_to @post.url, @post.url, :target => "_blank" %>
-    </b>
-  </p>
+  <% if @post.url.present? %>
+    <p>
+      <b>See the full aritcle @ 
+        <%= link_to truncate("#{post.url}", :length => 40), post.url, :target => "_blank" %>
+      </b>
+    </p>
+  <% end %>
 
-  <p class="preview">
-    
+  <p class="preview">  
     <%= raw @post.preview %>
   </p>
 
