@@ -19,7 +19,7 @@ body {
 
 }
 .post {
-  width: 40%;
+  width: 60%;
   margin: 0px auto;
 }
 
@@ -140,7 +140,7 @@ div {
 }
 .divimg {
   margin: 0 auto;
-  text-align: center;
+  text-align: left;
 }
 
 .icon-plus-sign {
@@ -148,6 +148,13 @@ div {
 }
 .paginate{
   text-align: center;
+}
+
+textarea {
+  width: 50%;
+}
+.navbar-inner {
+  background-color: #2c2c2c;
 }
 
 

@@ -13,17 +13,21 @@
       <h1 class="title" >  
         <%= post.title %>
       </h1>
+      
+      <% if post.author.present? %>
+        <p class="author">
+          <b>by:</b>
+          <%= post.author %>
+        </p>
+      <% end %>
 
-      <p class="author">
-        <b>by:</b>
-        <%= post.author %>
-      </p>
-
-      <p>
-        <b>See the full aritcle @ 
-        <%= link_to truncate("#{post.url}", :length => 40), post.url, :target => "_blank" %>
-        </b>
-      </p>
+      <% if post.url.present? %>
+        <p>
+          <b>See the full aritcle @ 
+          <%= link_to truncate("#{post.url}", :length => 40), post.url, :target => "_blank" %>
+          </b>
+        </p>
+      <% end %>
 
       <p class="preview"> 
         <%= raw post.preview %>
@@ -61,7 +65,8 @@
         <%= link_to 'Edit', edit_post_path(post) %>           
       <% end %>
       <div class="divimg"> 
-        ___________________________________________________________ 
+        <p>____________________________________________________________________________________________________________________________________
+        </p>
       </div> 
     </div>   
   <% end %>
