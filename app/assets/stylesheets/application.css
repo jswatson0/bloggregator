@@ -13,6 +13,7 @@
  *= require feeds
  *= require posts
  *= require scaffolds
+ *= require landing
  */
 
  h1 {font-family: 'Libre Baskerville', serif;}

@@ -1,0 +1,53 @@
+
+.intro {
+
+  margin: 0 auto;
+  width: 80%;
+  height: 350px;
+  background-color: white;
+  position: relative;
+  opacity:0.4;
+  filter:alpha(opacity=40);
+  padding: 20px;
+  text-align: center;
+  h1{
+    color: #d35400;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-weight: 300;
+
+  }
+  p {
+    color: black;
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 35px;
+  }
+  a {
+    font-weight: bold;
+  }
+
+}
+
+img.landingphoto {
+  /* Set rules to fill background */
+  max-height: 700px;
+  min-width: 1024px;
+  
+  /* Set up proportionate scaling */
+  width: 100%;
+  height: auto;
+  
+  /* Set up positioning */
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+@media screen and (max-width: 1024px) { /* Specific to this particular image */
+  img.landingphoto {
+    left: 50%;
+    margin-left: -512px;   /* 50% */
+  }
+}
+
+

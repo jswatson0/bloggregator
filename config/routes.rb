@@ -11,7 +11,7 @@ Bloggregator::Application.routes.draw do
 
   devise_for :admins
 
-  root :to => "posts#index"
+  root :to => "posts#landing"
 
   resources :posts do
     member do
