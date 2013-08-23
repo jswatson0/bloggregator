@@ -1,6 +1,6 @@
 <div class="container">
 	<div class="welcome">
-	  <h3> Read an Article - Get Smarter - Carry on </h3>
+	  <h3> Web Development and Design - Personal Ramblings</br> & </br> The Generally Interesting </h3>
 	  <p>____________________________________________________________________________________________________________________________________
 	  </p>
 	</div>
@@ -32,7 +32,10 @@
 		    <%= favorite.post.date_posted %>
 		  </p>
 		  <%= link_to 'Remove From My Reads', destroy_favorites_path(favorite), method: :delete, remote: true, format: :js, data: { confirm: 'Are you sure?' } %> 
-		  ____________________________________________________________	
+		  <div class="divimg"> 
+        <p>____________________________________________________________________________________________________________________________________
+        </p>
+      </div> 
 	  </div>
   <% end %>
 </div>
